@@ -1,17 +1,23 @@
-const express = require('express');
-// const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config({path: "./config.env"});
+const app = require("./app");
 
-require('dotenv').config();
+const PORT = 8000;
 
-const app = new express();
-const port = 8000;
+const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 
-app.use(express.json());
+const connectToDatabase = async function(){
+    try{
+        await mongoose.connect( DB,  {useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false, useUnifiedTopology: true} );
+        console.log("Database connection successfull");
+    }catch(err){
+        console.log(err);
+    }
+}
 
-app.use('/', (req, res) => {
-    return res.status(200).json("Hello world!");
-});
+connectToDatabase();
 
-app.listen(port, () => {
-    console.log(`Server is running at port ${port}`);
-});
+app.listen( process.env.PORT || PORT, function(){
+    console.log(`Server listening to port ${PORT}`);
+})
