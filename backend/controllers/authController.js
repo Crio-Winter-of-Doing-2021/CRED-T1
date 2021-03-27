@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
+const {promisify} = require("util");
 const User = require("../models/userModel");
+const sendMail = require("../utils/email");
 // mongoose.Types.ObjectId  req.user._id.toString()
 var store_temp_tokens = []
 
@@ -49,12 +51,26 @@ exports.addUser = async function( req, res, next ){
 
         const verificationURL = `https://${req.get('host')}/verify/${token}/${newUser._id}`;
         console.log(verificationURL);
+        try{
+            await sendMail({
+                email : req.body.email,
+                subject : 'email verification link expires in 20 minutes',
+                message : `Click the link below to verify your email and signup to GeekPal account ${verificationURL}`
+            })
+    
+            res.status(200).json({
+                status: 'success',
+                message: 'Verification link send to email, Wait for verification now'
+            });
+        }catch(err){
+            
+        
+            res.status(400).json({
+                status : "fail",
+                message : "Something went wrong"
+            })
+        }
 
-        // send this to the registered mailid
-        // console.log( req.body );
-        res.status(200).json({
-            status : "success"
-        })
     }catch(err){
         console.log( err );
         res.status(400).json({
@@ -158,7 +174,7 @@ exports.isLoggedIn = async function( req, res, next ){
             next();
         }
         const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-        const currentUser = await User.findById(decoded.id);
+        const currentUser = await User.findById(decoded.id).select('+active');
         if(!currentUser){
             req.user = undefined;
             next();

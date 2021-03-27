@@ -8,6 +8,8 @@ const swaggerJsdoc = require("swagger-jsdoc")
 const swaggerUI = require("swagger-ui-express")
 
 const basicRoutes = require("./routes/basicRoutes");
+const cardRoutes = require("./routes/cardRoutes");
+const statementRoutes = require("./routes/statementRoutes");
 const app = express();
 
 app.use(cookieParser());
@@ -39,5 +41,9 @@ app.use('/swagger-ui', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 
 app.use('/',basicRoutes);
+app.use('/card',cardRoutes );
+app.use('/statement', statementRoutes);
+
+
 
 module.exports = app;

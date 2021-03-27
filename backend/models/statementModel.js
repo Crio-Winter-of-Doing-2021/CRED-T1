@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const statementSchema = new mongoose.Schema({
     cardId : {
         type : String,
-        required : [true, "card no is required"]
+        required : [true, "card id is required"]
     },
     amount : {
         type : Number,
@@ -28,6 +28,6 @@ const statementSchema = new mongoose.Schema({
     }
 })
 
-const Statement = mongoose.Model('Statement', statementSchema);
+const Statement = mongoose.model('Statement', statementSchema);
 
 module.exports = Statement;
