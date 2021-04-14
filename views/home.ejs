@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description"
+        content="Quick Website UI Kit is an innovative HTML template solution which combines beautiful design and flawless functionality.">
+    <meta name="author" content="Webpixels">
+    <title>CRED | Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%
+            }
+
+            100% {
+                width: 0;
+                height: 0
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1
+        }
+
+        body:not(.loaded) {
+            overflow: hidden
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector("body").classList.add("loaded")
+            }, 300)
+        })
+    </script>
+    <link rel="icon" href="..\..\assets\img\brand\favicon.png" type="image/png">
+    <link rel="stylesheet" href="..\..\assets\libs\swiper\dist\css\swiper.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\@fancyapps\fancybox\dist\jquery.fancybox.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\sweetalert2\dist\sweetalert2.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\@fortawesome\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" href="..\..\assets\css\quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+    
+    <%- include ('partials/navbar.ejs') %>
+
+    <section class="slice slice-lg bg-primary">
+        <div data-offset-top="#navbar-main">
+            <div class="container d-flex align-items-center">
+                <div class="col px-0">
+                    <div class="row row-grid align-items-center">
+                        <div class="col-lg-6 text-center text-lg-left">
+                            <h1 class="display-4 text-white my-4">Manage all your credit cards with
+                                <strong>CRED</strong>
+                            </h1>
+                            <p class="lead text-white opacity-8">Pay bills timely reminders and get rewards here.</p>
+                            <div class="mt-5"><a href="./signup.html" class="btn btn-white btn-lg btn-icon"><span
+                                        class="btn-inner--text">Sign up</span><span class="btn-inner--icon"> <i
+                                            data-feather="plus"></i></span></a></div>
+                            <div class="d-flex align-items-center justify-content-center justify-content-lg-left mt-5">
+                                <div class="col-auto text-sm text-white pl-0 pr-4">Developed by:</div>
+                                <div class="col client-group">
+                                    <div class="row justify-content-center">
+                                        <div class="client col-3 py-3"><img alt="Image placeholder"
+                                                src="..\..\assets\img\clients\svg\google-white.svg"></div>
+                                        <div class="client col-3 py-3"><img alt="Image placeholder"
+                                                src="..\..\assets\img\clients\svg\spotify-white.svg"></div>
+                                        <div class="client col-3 py-3"><img alt="Image placeholder"
+                                                src="..\..\assets\img\clients\svg\airbnb-white.svg"></div>
+                                        <div class="client col-3 py-3"><img alt="Image placeholder"
+                                                src="..\..\assets\img\clients\svg\paypal-white.svg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-5 col-sm-8 ml-auto mr-auto mr-lg-0">
+                            <div class="card rounded-bottom-right">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-4">
+
+                                    </div>
+                                    <div class="card card-money bg-gradient-dark border-0 mb-0">
+                                        <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
+                                            <figure class="w-100 d-none d-lg-block"><img
+                                                    src="..\..\assets\img\svg\backgrounds\dot-map.svg"
+                                                    class="svg-inject opacity-8" alt="Image placeholder"></figure>
+                                        </div>
+                                        <div class="card-body position-relative zindex-100">
+                                            <div class="row justify-content-between align-items-center">
+                                                <div class="col"><img src="..\..\assets\img\svg\cards\mastercard.svg"
+                                                        alt="Image placeholder" class="rounded-sm" style="height:26px">
+                                                </div>
+                                                <div class="col-auto"><span class="badge badge-success">Active</span>
+                                                </div>
+                                            </div>
+                                            <div class="my-4"><span class="surtitle text-light">Card number</span>
+                                                <div class="card-serial-number h4 text-white">
+                                                    <div>XXXX</div>
+                                                    <div>XXXX</div>
+                                                    <div>XXXX</div>
+                                                    <div>XXXX</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col"><span class="surtitle text-light">Name</span> <span
+                                                        class="d-block h6 text-white">John Snow</span></div>
+                                                <div class="col"><span class="surtitle text-light">Expiry date</span>
+                                                    <span class="d-block h6 text-white">11/23</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group list-group-flush">
+
+
+                                        <div class="list-group-item px-0"><a href="#"
+                                                class="text-sm text-primary text-underline--dashed">View all ›</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape-container shape-position-bottom shape-line"><svg width="2560px" height="100px"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveaspectratio="none"
+                x="0px" y="0px" viewbox="0 0 2560 100" style="enable-background:new 0 0 2560 100" xml:space="preserve"
+                class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg></div>
+    </section>
+    <section class="slice slice-lg">
+        <div class="container">
+           
+            <div class="row mx-lg-n4">
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div class="icon icon-shape rounded-circle bg-warning text-white mr-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg></div>
+                            </div>
+                            <div><span class="h6">100% Responsive</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div class="icon icon-shape rounded-circle bg-primary text-white mr-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg></div>
+                            </div>
+                            <div><span class="h6">Based on Bootstrap 4</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div class="icon icon-shape rounded-circle bg-danger text-white mr-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg></div>
+                            </div>
+                            <div><span class="h6">Built with SASS</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div class="icon icon-shape rounded-circle bg-success text-white mr-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg></div>
+                            </div>
+                            <div><span class="h6">300+ components</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div class="icon icon-shape rounded-circle bg-info text-white mr-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg></div>
+                            </div>
+                            <div><span class="h6">23+ widgets</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div class="icon icon-shape rounded-circle bg-warning text-white mr-4"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-check">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg></div>
+                            </div>
+                            <div><span class="h6">Bootstrap Flexbox Grid</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div>
+                                    <div class="icon icon-shape rounded-circle bg-info text-white mr-4"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-check">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></div>
+                                </div>
+                            </div>
+                            <div><span class="h6">Animate CSS</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div>
+                                    <div class="icon icon-shape rounded-circle bg-danger text-white mr-4"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-check">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></div>
+                                </div>
+                            </div>
+                            <div><span class="h6">Integrated plugins</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-4">
+                    <div class="card shadow-none">
+                        <div class="p-3 d-flex">
+                            <div>
+                                <div>
+                                    <div class="icon icon-shape rounded-circle bg-primary text-white mr-4"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-check">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></div>
+                                </div>
+                            </div>
+                            <div><span class="h6">Smart HTML markup</span>
+                                <p class="text-sm text-muted mb-0">Built to be customized.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+   
+    <section class="slice slice-lg">
+        <div class="container">
+            <div class="row mb-5 justify-content-center text-center">
+                <div class="col-lg-8 col-md-10">
+                    <h2 class="mt-4">Helpful answers</h2>
+                    <div class="mt-2">
+                        <p class="lead lh-180">Get To Know more about CRED.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div id="accordion-1" class="accordion accordion-spaced">
+                        <div class="card">
+                            <div class="card-header py-4" id="heading-1-1" data-toggle="collapse" role="button"
+                                data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+                                <h6 class="mb-0"><i data-feather="file" class="mr-3"></i>How to add Card?</h6>
+                            </div>
+                            <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1"
+                                data-parent="#accordion-1">
+                                <div class="card-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header py-4" id="heading-1-2" data-toggle="collapse" role="button"
+                                data-target="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
+                                <h6 class="mb-0"><i data-feather="unlock" class="mr-3"></i>Does CRED charges amount?</h6>
+                            </div>
+                            <div id="collapse-1-2" class="collapse" aria-labelledby="heading-1-2"
+                                data-parent="#accordion-1">
+                                <div class="card-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header py-4" id="heading-1-3" data-toggle="collapse" role="button"
+                                data-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
+                                <h6 class="mb-0"><i data-feather="folder" class="mr-3"></i>Will we get rewards?
+                                </h6>
+                            </div>
+                            <div id="collapse-1-3" class="collapse" aria-labelledby="heading-1-3"
+                                data-parent="#accordion-1">
+                                <div class="card-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div id="accordion-2" class="accordion accordion-spaced">
+                        <div class="card">
+                            <div class="card-header py-4" id="heading-2-1" data-toggle="collapse" role="button"
+                                data-target="#collapse-2-1" aria-expanded="false" aria-controls="collapse-2-1">
+                                <h6 class="mb-0"><i data-feather="file" class="mr-3"></i>Which id do I need?</h6>
+                            </div>
+                            <div id="collapse-2-1" class="collapse" aria-labelledby="heading-2-1"
+                                data-parent="#accordion-2">
+                                <div class="card-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header py-4" id="heading-2-2" data-toggle="collapse" role="button"
+                                data-target="#collapse-2-2" aria-expanded="false" aria-controls="collapse-2-2">
+                                <h6 class="mb-0"><i data-feather="unlock" class="mr-3"></i>How do I get access to a
+                                    lost account?</h6>
+                            </div>
+                            <div id="collapse-2-2" class="collapse" aria-labelledby="heading-2-2"
+                                data-parent="#accordion-2">
+                                <div class="card-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header py-4" id="heading-2-3" data-toggle="collapse" role="button"
+                                data-target="#collapse-2-3" aria-expanded="false" aria-controls="collapse-2-3">
+                                <h6 class="mb-0"><i data-feather="folder" class="mr-3"></i>How do I see previous orders?
+                                </h6>
+                            </div>
+                            <div id="collapse-2-3" class="collapse" aria-labelledby="heading-2-3"
+                                data-parent="#accordion-2">
+                                <div class="card-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <%- include ('partials/footer.ejs') %>
+
+   
+    <script src="..\..\assets\libs\jquery\dist\jquery.min.js"></script>
+    <script src="..\..\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+    <script src="..\..\assets\libs\svg-injector\dist\svg-injector.min.js"></script>
+    <script src="..\..\assets\libs\feather-icons\dist\feather.min.js"></script>
+    <script src="..\..\assets\libs\in-view\dist\in-view.min.js"></script>
+    <script src="..\..\assets\libs\sticky-kit\dist\sticky-kit.min.js"></script>
+    <script src="..\..\assets\libs\imagesloaded\imagesloaded.pkgd.min.js"></script>
+    <script src="..\..\assets\libs\swiper\dist\js\swiper.min.js"></script>
+    <script src="..\..\assets\libs\@fancyapps\fancybox\dist\jquery.fancybox.min.js"></script>
+    <script src="..\..\assets\js\quick-website.js"></script>
+    <script src="assets/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script>
+        feather.replace({
+            width: "1em",
+            height: "1em"
+        })
+    </script>
+    <script>
+        ! function (e, t, a, n, g) {
+            e[n] = e[n] || [], e[n].push({
+                "gtm.start": (new Date).getTime(),
+                event: "gtm.js"
+            });
+            var m = t.getElementsByTagName(a)[0],
+                r = t.createElement(a);
+            r.async = !0, r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MF4DZVH", m.parentNode.insertBefore(r,
+                m)
+        }(window, document, "script", "dataLayer")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description"
+        content="Quick Website UI Kit is an innovative HTML template solution which combines beautiful design and flawless functionality.">
+    <meta name="author" content="Webpixels">
+    <title>CRED | Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%
+            }
+
+            100% {
+                width: 0;
+                height: 0
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1
+        }
+
+        body:not(.loaded) {
+            overflow: hidden
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards
+        }
+    </style>
+    <script>window.addEventListener("load", function () { setTimeout(function () { document.querySelector("body").classList.add("loaded") }, 300) })</script>
+    <link rel="icon" href="..\..\assets\img\brand\favicon.png" type="image/png">
+    <link rel="stylesheet" href="..\..\assets\libs\sweetalert2\dist\sweetalert2.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\@fortawesome\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" href="..\..\assets\css\quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <a href="..\..\index.html"
+        class="btn btn-white btn-icon-only rounded-circle position-absolute zindex-101 left-4 top-4 d-none d-lg-inline-flex"
+        data-toggle="tooltip" data-placement="right" title="Go back"><span class="btn-inner--icon"><i
+                data-feather="arrow-left"></i></span></a>
+    <section>
+        <div class="bg-primary position-absolute h-100 top-0 left-0 zindex-100 col-lg-6 col-xl-6 zindex-100 d-none d-lg-flex flex-column justify-content-end"
+            data-bg-size="cover" data-bg-position="center"><img src="..\..\assets\img\theme\light\img-v-2.jpg"
+                alt="Image" class="img-as-bg">
+            <div class="row position-relative zindex-110 p-5">
+                <div class="col-md-8 text-center mx-auto"><span class="badge badge-warning badge-pill">CRED</span>
+                    <h5 class="h5 text-white mt-3"></h5>
+                    <p class="text-white opacity-8">Login Page</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex flex-column">
+            <div class="row align-items-center justify-content-center justify-content-lg-end min-vh-100">
+                <div class="col-sm-7 col-lg-6 col-xl-6 py-6 py-md-0">
+                    <div class="row justify-content-center">
+                        <div class="col-11 col-lg-10 col-xl-6">
+                            <div>
+                                <div class="mb-5">
+                                    <h6 class="h3 mb-1">Welcome back!</h6>
+                                    <p class="text-muted mb-0">Sign in to your account to continue.</p>
+                                </div><span class="clearfix"></span>
+                                <form>
+                                    <div class="form-group"><label class="form-control-label">Email address</label>
+                                        <div class="input-group input-group-merge"><input type="email"
+                                                class="form-control form-control-prepend" id="input-email"
+                                                placeholder="name@example.com">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="user"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div><label class="form-control-label">Password</label></div>
+                                            <div class="mb-2"><a href="#"
+                                                    class="small text-muted text-underline--dashed border-primary"
+                                                    data-toggle="password-text" data-target="#input-password">Show
+                                                    password</a></div>
+                                        </div>
+                                        <div class="input-group input-group-merge"><input type="password"
+                                                class="form-control form-control-prepend" id="input-password"
+                                                placeholder="Password">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="key"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4"><button type="button" class="btn btn-block btn-primary" id="loginButton">Sign
+                                            in</button></div>
+                                </form>
+                                
+                               
+                                <div class="mt-4"><small>Not registered?</small> <a href="./signup.html"
+                                        class="small font-weight-bold">Create account</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+  
+    <script src="..\..\assets\libs\jquery\dist\jquery.min.js"></script>
+    <script src="..\..\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+    <script src="..\..\assets\libs\svg-injector\dist\svg-injector.min.js"></script>
+    <script src="..\..\assets\libs\feather-icons\dist\feather.min.js"></script>
+    <script src="..\..\assets\libs\in-view\dist\in-view.min.js"></script>
+    <script src="..\..\assets\libs\sticky-kit\dist\sticky-kit.min.js"></script>
+    <script src="..\..\assets\libs\imagesloaded\imagesloaded.pkgd.min.js"></script>
+    <script src="..\..\assets\js\quick-website.js"></script>
+    <script src="assets/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script>
+        async function sendPost(email, password){
+            try{
+                const res = await axios({
+                    method : 'POST',
+                    url : '/api/login',
+                    data : {email, password}
+                })
+
+                if( res.data.status == "success") {
+                    
+                    Swal.fire(
+                        'Success',
+                    '',
+                    'success'
+                    )
+                    // redirect to the dashboard
+                    window.location.assign('/dashboard');
+                }
+            }catch(err){
+                Swal.fire(
+                        'Fail',
+                    'Something went wrong',
+                    'warning'
+                    )
+            }
+        }
+       
+    </script>
+    <script>
+        $(document).ready(function(){
+            // console.log(document.cookie)
+            $("#loginButton").click(function(){
+                const email = $("#input-email").val();
+                const password = $("#input-password").val();
+                if( !email || !password ){
+                    Swal.fire(
+                        'Fail',
+                    'Please Enter all the required credentials',
+                    'warning'
+                    )
+                    return;
+                }
+                sendPost(email, password);
+            })
+        })
+    </script>
+
+    <script>feather.replace({ width: "1em", height: "1em" })</script>
+    <script>!function (e, t, a, n, g) { e[n] = e[n] || [], e[n].push({ "gtm.start": (new Date).getTime(), event: "gtm.js" }); var m = t.getElementsByTagName(a)[0], r = t.createElement(a); r.async = !0, r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MF4DZVH", m.parentNode.insertBefore(r, m) }(window, document, "script", "dataLayer")</script>
+</body>
+
+</html>

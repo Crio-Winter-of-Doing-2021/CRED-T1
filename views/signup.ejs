@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description"
+        content="Quick Website UI Kit is an innovative HTML template solution which combines beautiful design and flawless functionality.">
+    <meta name="author" content="Webpixels">
+    <title>CRED | Signup</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%
+            }
+
+            100% {
+                width: 0;
+                height: 0
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1
+        }
+
+        body:not(.loaded) {
+            overflow: hidden
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector("body").classList.add("loaded")
+            }, 300)
+        })
+    </script>
+    <link rel="icon" href="..\..\assets\img\brand\favicon.png" type="image/png">
+    <link rel="stylesheet" href="..\..\assets\libs\sweetalert2\dist\sweetalert2.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\@fortawesome\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" href="..\..\assets\css\quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <a href="..\..\index.html"
+        class="btn btn-white btn-icon-only rounded-circle position-absolute zindex-101 left-4 top-4 d-none d-lg-inline-flex"
+        data-toggle="tooltip" data-placement="right" title="Go back"><span class="btn-inner--icon"><i
+                data-feather="arrow-left"></i></span></a>
+    <section>
+        <div class="bg-primary position-absolute h-100 top-0 left-0 zindex-100 col-lg-6 col-xl-6 zindex-100 d-none d-lg-flex flex-column justify-content-end"
+            data-bg-size="cover" data-bg-position="center"><img src="..\..\assets\img\theme\light\img-v-2.jpg"
+                alt="Image" class="img-as-bg">
+            <div class="row position-relative zindex-110 p-5">
+                <div class="col-md-8 text-center mx-auto"><span class="badge badge-warning badge-pill">CRED</span>
+                    <h5 class="h5 text-white mt-3"></h5>
+                    <p class="text-white opacity-8">Create account here</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex flex-column">
+            <div class="row align-items-center justify-content-center justify-content-lg-end min-vh-100">
+                <div class="col-sm-7 col-lg-6 col-xl-6 py-6 py-lg-0">
+                    <div class="row justify-content-center">
+                        <div class="col-11 col-lg-10 col-xl-7">
+                            <div>
+                                <div class="mt-2">
+                                    <h6 class="h3 mb-1">Create your account</h6>
+                                    <p class="text-muted mb-0"></p>
+                                </div><span class="clearfix"></span>
+                                <form>
+                                    <div class="form-group"><label class="form-control-label">Username</label>
+                                        <div class="input-group input-group-merge"><input type="text"
+                                                class="form-control form-control-prepend" id="input-username"
+                                                placeholder="John Ive">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="user"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"><label class="form-control-label">Name</label>
+                                        <div class="input-group input-group-merge"><input type="text"
+                                                class="form-control form-control-prepend" id="input-name"
+                                                placeholder="John Ive">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="user"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"><label class="form-control-label">Email address</label>
+                                        <div class="input-group input-group-merge"><input type="email"
+                                                class="form-control form-control-prepend" id="input-email"
+                                                placeholder="name@example.com">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="at-sign"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"><label class="form-control-label">Gender</label>
+                                        <div class="tab-example-result"><select class="custom-select" id="input-gender">
+                                            <option value="">Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select></div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div><label class="form-control-label">Password</label></div>
+                                            <div class="mb-2"><a href="#"
+                                                    class="small text-muted text-underline--dashed border-primary"
+                                                    data-toggle="password-text" data-target="#input-password">Show
+                                                    password</a></div>
+                                        </div>
+                                        <div class="input-group input-group-merge"><input type="password"
+                                                class="form-control form-control-prepend" id="input-password"
+                                                placeholder="********">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="key"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div><label class="form-control-label">Password Confirm</label></div>
+                                            <div class="mb-2"><a href="#"
+                                                    class="small text-muted text-underline--dashed border-primary"
+                                                    data-toggle="password-text" data-target="#input-password-confirm">Show
+                                                    password</a></div>
+                                        </div>
+                                        <div class="input-group input-group-merge"><input type="password"
+                                                class="form-control form-control-prepend" id="input-password-confirm"
+                                                placeholder="********">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        data-feather="key"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="my-4">
+                                        <div class="custom-control custom-checkbox mb-3"><input type="checkbox"
+                                                class="custom-control-input" id="check-terms"> <label
+                                                class="custom-control-label" for="check-terms">I agree to the <a
+                                                    href="..\utility\terms.html">terms and conditions</a></label></div>
+                                    </div>
+                                    <div class="mt-4"><button type="button" class="btn btn-block btn-primary" id="SignupButton">Create my
+                                            account</button></div>
+                                </form>
+                              
+                                
+                                <div class="mt-4"><small>Already have an acocunt?</small> <a
+                                        href="./login.html" class="small font-weight-bold">Sign in</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+    
+    <script src="..\..\assets\libs\jquery\dist\jquery.min.js"></script>
+    <script src="..\..\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+    <script src="..\..\assets\libs\svg-injector\dist\svg-injector.min.js"></script>
+    <script src="..\..\assets\libs\feather-icons\dist\feather.min.js"></script>
+    <script src="..\..\assets\libs\in-view\dist\in-view.min.js"></script>
+    <script src="..\..\assets\libs\sticky-kit\dist\sticky-kit.min.js"></script>
+    <script src="..\..\assets\libs\imagesloaded\imagesloaded.pkgd.min.js"></script>
+    <script src="..\..\assets\js\quick-website.js"></script>
+    <script src="assets/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        async function sendPost(username, name, email, gender, password ){
+            try{
+                const res = await axios({
+                    method : 'POST',
+                    url : '/api/signup',
+                    data : { username, name, email, gender, password}
+                })
+
+                if( res.data.status == "success") {
+                    Swal.fire(
+                        'Success',
+                    res.data.message,
+                    'success'
+                    )
+                }
+            }catch(err){
+                Swal.fire(
+                        'Fail',
+                    'Something went wrong',
+                    'warning'
+                    )
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#SignupButton").click(function(){
+                var username = $("#input-username").val().trim();
+                var name = $("#input-name").val().trim();
+                var email = $("#input-email").val().trim();
+                var gender = $("#input-gender").val().trim();
+                var password = $("#input-password").val().trim();
+                var passwordConfirm = $("#input-password-confirm").val().trim();
+                console.log(username, email, name, gender, password, passwordConfirm);
+
+
+                if( !username || !name || !email || !gender || !password || !passwordConfirm ){
+                    Swal.fire(
+                    'Fail',
+                    'Please Enter all the required credentials',
+                    'warning'
+                    )
+                    return;
+                }
+
+                if( password!= passwordConfirm ){
+                    Swal.fire(
+                        'Fail',
+                    'Please Enter same passwords',
+                    'warning'
+                    )
+                    return;
+                }
+                sendPost(username, name, email, gender, password);
+            })
+        })
+    </script>
+    <script>
+        feather.replace({
+            width: "1em",
+            height: "1em"
+        })
+    </script>
+    <script>
+        ! function (e, t, a, n, g) {
+            e[n] = e[n] || [], e[n].push({
+                "gtm.start": (new Date).getTime(),
+                event: "gtm.js"
+            });
+            var m = t.getElementsByTagName(a)[0],
+                r = t.createElement(a);
+            r.async = !0, r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MF4DZVH", m.parentNode.insertBefore(r,
+                m)
+        }(window, document, "script", "dataLayer")
+    </script>
+</body>
+
+</html>

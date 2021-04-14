@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description"
+        content="Quick Website UI Kit is an innovative HTML template solution which combines beautiful design and flawless functionality.">
+    <meta name="author" content="Webpixels">
+    <title>CRED</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%
+            }
+
+            100% {
+                width: 0;
+                height: 0
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1
+        }
+
+        body:not(.loaded) {
+            overflow: hidden
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards
+        }
+
+        #header-main {
+            background-color: #006ecc;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector("body").classList.add("loaded")
+            }, 300)
+        })
+    </script>
+    <link rel="icon" href="..\..\assets\img\brand\favicon.png" type="image/png">
+    <link rel="stylesheet" href="..\..\assets\libs\swiper\dist\css\swiper.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\@fancyapps\fancybox\dist\jquery.fancybox.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\sweetalert2\dist\sweetalert2.min.css">
+    <link rel="stylesheet" href="..\..\assets\libs\@fortawesome\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" href="..\..\assets\css\quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+
+    <%- include ('partials/navbar.ejs') %>
+    <section class="pt-5 bg-section-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="row align-items-center">
+                        <div class="col"><span class="surtitle">Your Cards</span>
+                            <h1 class="h2 mb-0">All Cards</h1>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-4">
+                        <div class="col">
+                            <ul class="nav nav-tabs overflow-x">
+                                <li class="nav-item"><a href="/dashboard" class="nav-link">Profile</a></li>
+                                <li class="nav-item"><a href="/add-card" class="nav-link active">Add Card</a></li>
+                                <li class="nav-item"><a href="/view-card" class="nav-link">View Cards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slice slice-sm bg-section-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="mb-5">
+                     
+                        <div>
+                            <div class="row mb-4">
+                                <div class="col-auto col-lg-8">
+                                    <h5 class="mb-0">Add new card</h5>
+                                </div>
+                                <div class="col col-lg-4 text-right"><img src="..\..\assets\img\svg\cards\visa.svg"
+                                        alt="Image placeholder" class="rounded-sm mr-2" style="height:26px"> <img
+                                        src="..\..\assets\img\svg\cards\mastercard.svg" alt="Image placeholder"
+                                        class="rounded-sm" style="height:26px"></div>
+                            </div>
+                            <form>
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <div class="form-group"><label class="form-control-label">Card number</label>
+                                            <div class="input-group input-group-merge"><input type="text"
+                                                    class="form-control" data-mask="0000 0000 0000 0000"
+                                                    placeholder="Card number" id="card">
+                                                <div class="input-group-append"><span class="input-group-text"><i
+                                                            data-feather="credit-card"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group"><label class="form-control-label">Expiry date</label>
+                                            <input type="text" class="form-control" data-mask="00/00"
+                                                placeholder="MM/YY" id="expiry"></div>
+                                    </div>
+                                    <div class="col-6">
+                                            <div class="form-group"><label class="form-control-label">Name on card</label>
+                                                <input type="text" class="form-control" placeholder="Your name" id="name"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-right"><button type="button" onclick="Submit()" class="btn btn-sm btn-primary">Save
+                                        card</button></div>
+                            </form>
+                        </div>
+                        <hr class="my-5">
+                        <div class="row justify-content-between">
+                            <div class="col-md-4">
+                                <div class="text-xl mb-2"><i data-feather="lock" class="text-success"></i></div>
+                                <h4 class="h6 mb-1">Your Information is Safe</h4>
+                                <p class="text-muted text-sm">We will not sell or rent your personal contact information
+                                    for any marketing purposes whatsoever</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-xl mb-2"><i data-feather="shield" class="text-success"></i></div>
+                                <h4 class="h6 mb-1">Secure Checkout</h4>
+                                <p class="text-muted text-sm">We will not sell or rent your personal contact information
+                                    for any marketing purposes whatsoever</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-xl mb-2"><i data-feather="sliders" class="text-success"></i></div>
+                                <h4 class="h6 mb-1">You are in Control</h4>
+                                <p class="text-muted text-sm">We will not sell or rent your personal contact information
+                                    for any marketing purposes whatsoever</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('partials/footer.ejs') %>
+
+
+    <script src="..\..\assets\libs\jquery\dist\jquery.min.js"></script>
+    <script src="..\..\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+    <script src="..\..\assets\libs\svg-injector\dist\svg-injector.min.js"></script>
+    <script src="..\..\assets\libs\feather-icons\dist\feather.min.js"></script>
+    <script src="..\..\assets\libs\in-view\dist\in-view.min.js"></script>
+    <script src="..\..\assets\libs\sticky-kit\dist\sticky-kit.min.js"></script>
+    <script src="..\..\assets\libs\imagesloaded\imagesloaded.pkgd.min.js"></script>
+    <script src="..\..\assets\libs\progressbar.js\dist\progressbar.min.js"></script>
+    <script src="..\..\assets\libs\swiper\dist\js\swiper.min.js"></script>
+    <script src="..\..\assets\libs\@fancyapps\fancybox\dist\jquery.fancybox.min.js"></script>
+    <script src="..\..\assets\libs\jquery-mask-plugin\dist\jquery.mask.min.js"></script>
+    <script src="..\..\assets\js\quick-website.js"></script>
+    <script src="assets/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        async function AddCard(number, expiry, name){
+            try{
+                const res = await axios({
+                    method : 'POST',
+                    url : '/card/add-card',
+                    data : {number, expiry, name}
+                })
+
+                if( res.data.status == "success") {
+                    
+                    Swal.fire(
+                        'Success',
+                    '',
+                    'success'
+                    )
+                    // redirect to the dashboard
+                    window.location.assign('/view-card');
+                }else{
+
+                }
+            }catch(err){
+                Swal.fire(
+                        'Fail',
+                    'Something went wrong',
+                    'warning'
+                    )
+            }
+        }
+    </script>
+    <script>
+            // Takes a credit card string value and returns true on valid number
+        function valid_credit_card(value) {
+          // Accept only digits, dashes or spaces
+        	if (/[^0-9-\s]+/.test(value)) return false;
+        
+        	// The Luhn Algorithm. It's so pretty.
+        	let nCheck = 0, bEven = false;
+        	value = value.replace(/\D/g, "");
+        
+        	for (var n = value.length - 1; n >= 0; n--) {
+        		var cDigit = value.charAt(n),
+        			  nDigit = parseInt(cDigit, 10);
+            
+        		if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+            
+        		nCheck += nDigit;
+        		bEven = !bEven;
+        	}
+        
+        	return (nCheck % 10) == 0;
+        }
+    </script>
+    <script>
+        async function Submit(){
+            var number = $("#card").val();
+            var expiry = $("#expiry").val();
+            var name = $("#name").val();
+            
+            if( !number || !expiry || !name ){
+                Swal.fire(
+                        'Fail',
+                    'Please Enter all the required credentials',
+                    'warning'
+                    )
+                    return;
+            }
+            if( !valid_credit_card(number) ){
+                Swal.fire(
+                        'Fail',
+                    'Please Enter valid card Number',
+                    'warning'
+                    )
+                    return;
+            }
+            name = name.split(" ").join("");
+            await AddCard(number, expiry, name );
+        }
+        
+    </script>
+    <script>
+        feather.replace({
+            width: "1em",
+            height: "1em"
+        })
+    </script>
+    <script>
+        ! function (e, t, a, n, g) {
+            e[n] = e[n] || [], e[n].push({
+                "gtm.start": (new Date).getTime(),
+                event: "gtm.js"
+            });
+            var m = t.getElementsByTagName(a)[0],
+                r = t.createElement(a);
+            r.async = !0, r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MF4DZVH", m.parentNode.insertBefore(r,
+                m)
+        }(window, document, "script", "dataLayer")
+    </script>
+</body>
+
+</html>

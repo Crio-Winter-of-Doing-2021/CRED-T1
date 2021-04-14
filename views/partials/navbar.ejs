@@ -1,0 +1,73 @@
+<header class="header-transparent" id="header-main">
+    <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-dark" id="navbar-main">
+        <div class="container"><a class="navbar-brand" href="/"><img alt="Image placeholder"
+                    src="assets/img/brand/CRED2.PNG" id="navbar-logo"> </a><button class="navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
+                aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse navbar-collapse-overlay" id="navbar-main-collapse">
+                <div class="position-relative"><button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse"
+                        aria-expanded="false" aria-label="Toggle navigation"><i data-feather="x"></i></button></div>
+                <ul class="navbar-nav ml-lg-auto">
+
+
+ 
+
+                    <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover"><a
+                            class="nav-link" href="/about" role="button">About Us</a>
+                        <div class="dropdown-menu dropdown-menu-md p-0">
+                            <div class="list-group list-group-flush px-lg-4">
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover"><a
+                            class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-menu-md p-0">
+                            <div class="list-group list-group-flush px-lg-4">
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <% if(data==2){ %>
+                <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+                    <li class="nav-item"><a class="nav-link" href="/login">Sign in</a>
+                    </li>
+                    <li class="nav-item"><a href="/signup"
+                            class="btn btn-sm btn-white btn-icon ml-3" target="_blank"><span
+                                class="btn-inner--icon"><i data-feather="shopping-bag"></i></span> <span
+                                class="btn-inner--text">Signup</span></a></li>
+                </ul>
+                <div class="d-lg-none px-4 text-center mb-2"><a
+                        href="/login"
+                        class="btn btn-block btn-sm btn-dark" target="_blank">Sign in</a></div>
+                <div class="d-lg-none px-4 text-center"><a href="/signup"
+                        class="btn btn-block btn-sm btn-primary" target="_blank">Sign up</a></div>
+                <% } %>
+                <% if(data==1){ %>
+                    <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+                        <li class="nav-item"><a href="/dashboard"
+                                class="btn btn-sm btn-white btn-icon ml-3"><span
+                                    class="btn-inner--icon"><i data-feather="credit-card"></i></span> <span
+                                    class="btn-inner--text">Dashboard</span></a></li>
+                        <li class="nav-item"><a href="/api/logout"
+                                        class="btn btn-sm btn-white btn-icon ml-3"><span
+                                            class="btn-inner--icon"><i data-feather="info"></i></span> <span
+                                            class="btn-inner--text">Logout</span></a></li>
+                    </ul>
+                    
+
+                    <div class="d-lg-none px-4 text-center"><a href="/dashboard"
+                            class="btn btn-block btn-sm btn-primary" target="_blank">Dashboard</a></div>
+                    <div class="d-lg-none px-4 text-center"><a href="/api/logout"
+                                class="btn btn-block btn-sm btn-primary" target="_blank">Logout</a></div>
+                    
+                <% } %>
+            </div>
+        </div>
+    </nav>
+</header>
