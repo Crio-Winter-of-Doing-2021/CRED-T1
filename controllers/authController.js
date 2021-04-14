@@ -51,26 +51,35 @@ exports.addUser = async function( req, res, next ){
 
         const verificationURL = `https://${req.get('host')}/api/verify/${token}/${newUser._id}`;
         console.log(verificationURL);
-        try{
-            await sendMail({
-                email : req.body.email,
-                subject : 'email verification link expires in 20 minutes',
-                message : `Click the link below to verify your email and signup to GeekPal account ${verificationURL}`
-            })
+        // try{
+        //     await sendMail({
+        //         email : req.body.email,
+        //         subject : 'email verification link expires in 20 minutes',
+        //         message : `Click the link below to verify your email and signup to GeekPal account ${verificationURL}`
+        //     })
     
-            res.status(200).json({
-                status: 'success',
-                message: 'Verification link send to email, Wait for verification now'
-            });
-        }catch(err){
+        //     res.status(200).json({
+        //         status: 'success',
+        //         message: 'Verification link send to email, Wait for verification now'
+        //     });
+        // }catch(err){
             
         
-            res.status(400).json({
-                status : "fail",
-                message : "Something went wrong"
-            })
-        }
+        //     res.status(400).json({
+        //         status : "fail",
+        //         message : "Something went wrong"
+        //     })
+        // }
+        var up = await User.findByIdAndUpdate({_id:newUser._id}, {active:true});
+            const token_new = signToken(newUser._id);
+            cookieOptions = { expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN *24*60*60*1000) , http : true};
+            res.cookie('jwt', token_new, cookieOptions);
 
+            // res.redirect('/dashboard')
+        res.status(200).json({
+            status: 'success',
+            message: 'Account Created'
+        });
     }catch(err){
         console.log( err );
         res.status(400).json({

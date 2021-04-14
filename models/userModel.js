@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     },
     active : {
         type : Boolean,
-        default : false,
+        default : true,
         select : false
     },
     card: [String],
